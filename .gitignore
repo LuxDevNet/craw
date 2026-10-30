@@ -1,0 +1,8 @@
+.firecrawl/
+node_modules
+storage
+.env
+.wrangler
+.apify
+*.log
+

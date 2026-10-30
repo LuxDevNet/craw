@@ -1,0 +1,6 @@
+{
+  "startUrls": [{ "url": "https://example.com" }],
+  "maxPages": 1,
+  "maxRecords": 1,
+  "maxTotalChargeUsd": 1
+}

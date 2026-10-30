@@ -1,0 +1,60 @@
+{
+  "plugins": [
+    {
+      "id": "craw",
+      "name": "craw",
+      "title": "Craw",
+      "description": "Base host and plugin endpoint runtime for public-page scraping.",
+      "version": "0.1.0",
+      "npmName": "@agnamo/craw",
+      "kind": "host",
+      "endpoints": ["scrape", "doctor", "plugins"],
+      "vertical": "base",
+      "license": "MIT",
+      "homepage": "https://github.com/LuxDevNet/craw"
+    },
+    {
+      "id": "firecrawl",
+      "name": "firecrawl",
+      "title": "Firecrawl Layer",
+      "description": "Optional schema extraction fallback for Craw when Firecrawl credentials or a local Firecrawl URL are configured.",
+      "version": "0.1.0",
+      "npmName": "@agnamo/craw",
+      "kind": "plugin",
+      "endpoints": ["scrape", "doctor"],
+      "vertical": "base",
+      "license": "MIT",
+      "homepage": "https://firecrawl.dev",
+      "layer": "optional",
+      "defaultScraper": false
+    },
+    {
+      "id": "brightdata",
+      "name": "brightdata",
+      "title": "Bright Data Unlocker Layer",
+      "description": "Optional explicit-route Web Unlocker adapter for Craw; never used as silent failover.",
+      "version": "0.1.0",
+      "npmName": "@agnamo/craw",
+      "kind": "plugin",
+      "endpoints": ["scrape", "doctor"],
+      "vertical": "base",
+      "license": "MIT",
+      "homepage": "https://brightdata.com",
+      "layer": "optional",
+      "defaultScraper": false
+    },
+    {
+      "id": "craw-jobs",
+      "name": "unjobbed",
+      "title": "Craw Jobs",
+      "description": "Jobs scraper plugin for public APIs, ATS feeds, and opt-in boards. Needs-route boards are not the default.",
+      "version": "1.1.0",
+      "npmName": "@agnamo/craw-jobs",
+      "kind": "plugin",
+      "endpoints": ["scrape", "run", "doctor"],
+      "vertical": "jobs",
+      "license": "MIT",
+      "homepage": "https://github.com/LuxDevNet/unjobbed"
+    }
+  ]
+}

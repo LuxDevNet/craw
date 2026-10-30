@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Craw Marketplace</title>
+    <meta
+      name="description"
+      content="Craw is a toxic-fast scraping plugin host with manifest-backed marketplace cards."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="gas" aria-hidden="true"></canvas>
+    <main class="shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Craw Plugin Runtime</p>
+        <h1 id="hero-title">Toxic-fast scraping surfaces for command lines and marketplaces.</h1>
+        <p class="lede">
+          Manifest-backed plugins register endpoint commands once, then light up the CLI palette and the marketplace listing.
+        </p>
+        <div class="actions">
+          <a class="button" href="#marketplace">Explore plugins</a>
+          <code>craw</code>
+          <code>craw plugins --json</code>
+        </div>
+      </section>
+
+      <section class="panel stats" aria-label="Runtime stats">
+        <div>
+          <span data-stat="plugin-count">0</span>
+          <small>manifests</small>
+        </div>
+        <div>
+          <span data-stat="endpoint-count">0</span>
+          <small>endpoints</small>
+        </div>
+        <div>
+          <span data-stat="fps">0</span>
+          <small>fps gas loop</small>
+        </div>
+      </section>
+
+      <section class="marketplace" id="marketplace" aria-labelledby="marketplace-title">
+        <div class="section-head">
+          <p class="eyebrow">Marketplace</p>
+          <h2 id="marketplace-title">Plugin manifests</h2>
+          <p>Cards are loaded from <code>plugins.json</code>, the same envelope emitted by <code>craw plugins --json</code>.</p>
+        </div>
+        <div class="grid" data-plugin-grid>
+          <article class="card skeleton">
+            <span class="kind">loading</span>
+            <h3>Charging manifest fog</h3>
+            <p>Waiting for plugin metadata.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

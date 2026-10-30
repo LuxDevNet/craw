@@ -1,0 +1,13 @@
+{
+  "actorKeyValueStoreSchemaVersion": 1,
+  "title": "Run context",
+  "description": "Summary and a short PageRecord sample written at the end of a scrape.",
+  "collections": {
+    "context": {
+      "title": "Context",
+      "description": "Run summary plus up to 20 truncated page records.",
+      "key": "CONTEXT",
+      "contentTypes": ["application/json"]
+    }
+  }
+}

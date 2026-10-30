@@ -1,0 +1,77 @@
+{
+  "name": "@agnamo/craw",
+  "version": "0.1.0",
+  "description": "Craw base host and plugin endpoint runtime for public-page scraping.",
+  "type": "module",
+  "license": "MIT",
+  "author": "LuxDevNet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuxDevNet/craw.git"
+  },
+  "homepage": "https://agnamo-craw.agnamo.workers.dev",
+  "craw": {
+    "plugins": []
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "bin": {
+    "craw": "./bin/craw.js"
+  },
+  "files": [
+    ".actor",
+    "bin",
+    "scripts",
+    "src",
+    "site",
+    "workers",
+    "wrangler.jsonc",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./plugin": "./src/plugin.ts",
+    "./card": "./src/card.ts",
+    "./dispatch": "./src/dispatch.ts",
+    "./template/scrape": "./src/template/scrape.ts",
+    "./template/fetch": "./src/template/fetch.ts",
+    "./template/extract": "./src/template/extract.ts",
+    "./template/record": "./src/template/record.ts",
+    "./output": "./src/output/index.ts",
+    "./routing": "./src/routing/index.ts",
+    "./doctor": "./src/cli/doctor.ts"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "site:serve": "vite site --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test",
+    "deploy:site": "node scripts/deploy-site.mjs"
+  },
+  "dependencies": {
+    "apify": "^3.7.2",
+    "cheerio": "^1.2.0",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.5"
+  },
+  "peerDependencies": {
+    "apify-client": "^2.25.0"
+  },
+  "peerDependenciesMeta": {
+    "apify-client": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.7",
+    "wrangler": "^4.156.0"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "schemaVersion": {
+        "type": "integer",
+        "description": "PageRecord schema version.",
+        "nullable": true,
+        "example": 1
+      },
+      "id": {
+        "type": "string",
+        "description": "Stable id derived from the canonical page URL.",
+        "nullable": true,
+        "example": "0123456789abcdef"
+      },
+      "url": {
+        "type": "string",
+        "description": "Public page URL that was fetched.",
+        "nullable": true,
+        "example": "https://example.com"
+      },
+      "title": {
+        "type": "string",
+        "description": "Page title extracted from the document.",
+        "nullable": true,
+        "example": "Example Domain"
+      },
+      "text": {
+        "type": "string",
+        "description": "Extracted public page text.",
+        "nullable": true,
+        "example": "This domain is for use in illustrative examples."
+      },
+      "kind": {
+        "type": "string",
+        "description": "Extractor classification for the page.",
+        "nullable": true,
+        "example": "WebPage"
+      },
+      "extractedBy": {
+        "type": "string",
+        "description": "Extractor that produced the record.",
+        "enum": ["jsonld", "embedded", "rss", "excerpt", "firecrawl"],
+        "nullable": true,
+        "example": "excerpt"
+      },
+      "terms": {
+        "type": "string",
+        "description": "Collection terms for this template.",
+        "enum": ["public-page"],
+        "nullable": true,
+        "example": "public-page"
+      },
+      "retrievedAt": {
+        "type": "string",
+        "description": "UTC timestamp when the page was extracted.",
+        "nullable": true,
+        "example": "2026-01-15T12:00:00.000Z"
+      }
+    },
+    "required": [],
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Pages",
+      "description": "One row per public page.",
+      "transformation": {
+        "fields": ["url", "title", "kind", "extractedBy", "terms", "retrievedAt", "id", "schemaVersion", "text"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": { "label": "URL", "format": "link" },
+          "title": { "label": "Title", "format": "text" },
+          "kind": { "label": "Kind", "format": "text" },
+          "extractedBy": { "label": "Extracted by", "format": "text" },
+          "terms": { "label": "Terms", "format": "text" },
+          "retrievedAt": { "label": "Retrieved", "format": "date" },
+          "id": { "label": "ID", "format": "text" },
+          "schemaVersion": { "label": "Schema", "format": "number" },
+          "text": { "label": "Text", "format": "text" }
+        }
+      }
+    }
+  }
+}

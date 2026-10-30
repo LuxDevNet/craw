@@ -1,0 +1,44 @@
+{
+  "title": "Craw public page scrape",
+  "description": "Fetch explicit public http(s) URLs and return one PageRecord per page.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "Public http or https pages. Each entry is fetched with the base HTTP template.",
+      "editor": "requestListSources",
+      "prefill": [{ "url": "https://example.com" }]
+    },
+    "maxPages": {
+      "title": "Max pages",
+      "type": "integer",
+      "description": "Maximum pages to fetch. The template ceiling is 20.",
+      "editor": "number",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 20
+    },
+    "maxRecords": {
+      "title": "Max records",
+      "type": "integer",
+      "description": "Maximum PageRecord rows to save. The template ceiling is 50.",
+      "editor": "number",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 50
+    },
+    "maxTotalChargeUsd": {
+      "title": "Max total charge (USD)",
+      "type": "number",
+      "description": "Spend cap recorded for this run and required by the optional apify-client delegate. The template Actor does not call other Actors. Also set the same cap on the Apify run.",
+      "editor": "number",
+      "default": 1,
+      "minimum": 0,
+      "maximum": 5,
+      "prefill": 1
+    }
+  },
+  "required": ["startUrls"]
+}

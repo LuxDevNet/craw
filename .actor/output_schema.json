@@ -1,0 +1,19 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Page records",
+  "description": "One dataset row per fetched public page, plus a CONTEXT summary in the key-value store.",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Pages",
+      "description": "Dataset of PageRecord rows.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "context": {
+      "type": "string",
+      "title": "Context",
+      "description": "Run summary and a short sample of page records.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/CONTEXT"
+    }
+  }
+}

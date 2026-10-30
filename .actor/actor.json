@@ -1,0 +1,23 @@
+{
+  "actorSpecification": 1,
+  "name": "craw",
+  "title": "Craw public page scraper",
+  "description": "Fetch public http(s) pages and save one PageRecord per page. Job-board runs stay on the optional jobs plugin.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js_empty",
+    "generatedBy": "Cursor Grok 4.7"
+  },
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json",
+    "keyValueStore": "./key_value_store_schema.json"
+  },
+  "defaultMemoryMbytes": 256,
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 1024
+}
